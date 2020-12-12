@@ -6,7 +6,6 @@ export default class HtmlService {
   }
 
   async listContacts() {
-    console.log("listContacts");
     const contacts = await this.contactService.getAll();
     contacts.forEach((contact) => this.addToHtmlList(contact));
   }
@@ -16,17 +15,9 @@ export default class HtmlService {
     li.remove();
   }
 
-  // async saveTask(taskId, isDone) {
-  //   const task = await this.todoService.get(taskId);
-  //   task.done = isDone;
-  //   await this.todoService.save(task);
-  // }
-
-  // toggleTask(li, taskId) {
-  //   li.classList.toggle(doneCssClass);
-  //   const isDone = li.classList.contains(doneCssClass);
-  //   this.saveTask(taskId, isDone);
-  // }
+  async editContact(contact) {
+    // document.location.href = '/register.html';
+  }
 
   addToHtmlList(contact) {
     console.log(contact.telefone);
@@ -49,7 +40,7 @@ export default class HtmlService {
     editButton.appendChild(editIcon);
     editButton.addEventListener("click", (event) => {
       event.stopPropagation();
-      // this.deleteContact(contact.id, li);
+      this.editContact(contact);
     });
 
     deleteButton.appendChild(deleteIcon);
