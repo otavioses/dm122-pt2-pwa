@@ -33,17 +33,11 @@
         </nav>
       </div>
       <main class="mdl-layout__content mat-typography" style="text-align: center">
-        <form>
-          <input
-            type="text"
-            name="item"
-            placeholder="Type Month (MM-yyyy)"
-            autofocus=""
-            required=""
-            autocomplete="off"
-            minlength="7"
-            maxlength="7"
-            pattern="^(0?[1-9]|1[012])[\-\-]\d{4}$">
+        <form >
+          <input type="text" name="nome" placeholder="Nome">
+          <input type="text" name="telefone" placeholder="Telefone" inputmode="tel">
+          <input type="text" name="email" placeholder="E-mail" inputmode="email">
+          <button type="button" value="Submit" onclick="this.form.submit()" >Salvar</button>
         </form>
       </main>
     </div>
