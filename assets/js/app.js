@@ -1,11 +1,28 @@
-'use strict'
+import HtmlService from "./HtmlService.js";
+import ContactService from "./ContactService.js";
 
-if ('serviceWorker' in navigator) {
-  const success = () => console.log('[Service Worker] registered');
-  const failed = () => console.log('[Service Worker] registration failed');
+class App {
+  constructor() {
+    this.registerServiceWorker();
+    this.initialize();
+    console.log("App");
+  }
 
-  navigator.serviceWorker
-    .register('sw.js')
-    .then(success)
-    .catch(failed);
+  initialize() {
+    new HtmlService(new ContactService());
+  }
+
+  registerServiceWorker() {
+    if ("serviceWorker" in navigator) {
+      const onsuccess = () => console.log("[Service Worker] Registered......");
+      const onfailure = () => console.log("[Service Worker] Failed...;;...");
+
+      navigator.serviceWorker
+        .register("sw.js")
+        .then(onsuccess)
+        .catch(onfailure);
+    }
+  }
 }
+
+new App();

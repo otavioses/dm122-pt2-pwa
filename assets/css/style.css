@@ -3,10 +3,6 @@
   width: 50%;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-}
 
 .float {
   position: fixed;
@@ -24,10 +20,6 @@
 
 .my-float {
   margin-top: 22px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 form {
