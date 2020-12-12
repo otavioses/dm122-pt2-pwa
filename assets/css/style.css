@@ -3,7 +3,6 @@
   width: 50%;
 }
 
-
 .float {
   position: fixed;
   width: 60px;
@@ -33,9 +32,44 @@ input {
   font-size: 1.4em;
   margin: 0.2em;
 }
-button {
+
+.submit_button {
   width: 95%;
   padding: 0.5em;
   font-size: 1.4em;
   margin: 0.2em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 20px;
+  border-bottom: solid 1px #ddd;
+  cursor: pointer;
+  display: flex;
+}
+
+li > span {
+  flex: 1;
+  text-align: left;
+}
+
+li > button {
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.done > span {
+  text-decoration: line-through;
 }
