@@ -7,23 +7,22 @@ export default class RegisterService {
   }
 
   bindFormEvent() {
-    console.log("bindFormEvent");
     const form = document.querySelector("form");
     form.addEventListener("submit", (event) => {
-      console.log("submit");
       event.preventDefault();
       var inputs = form.elements;
       console.log(inputs);
       this.addContact(inputs['nome'].value, inputs['telefone'].value, inputs['email'].value);
+      window.location.href = "/";
     });
   }
+  
 
   async addContact(nome, telefone, email) {
     const contact = { nome: nome, telefone: telefone, email: email};
     const contactId = await this.contactService.save(contact);
     contact.id = contactId;
     console.log("addContact");
-    // this.addToHtmlList(contact);
   }
 
   async listContacts() {
@@ -56,9 +55,6 @@ export default class RegisterService {
 
     li.addEventListener("click", () => this.toggleTask(li, task.id));
 
-    // if (task.done) {
-    //   li.classList.add(doneCssClass);
-    // }
 
     span.textContent = contact.name;
 
