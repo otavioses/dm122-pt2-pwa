@@ -33,24 +33,34 @@ export default class HtmlService {
     const ul = document.querySelector("ul");
     const li = document.createElement("li");
     const span = document.createElement("span");
-    const button = document.createElement("button");
+    const deleteButton = document.createElement("button");
+    const editButton = document.createElement("button");
 
-    li.addEventListener("click", () => this.toggleTask(li, task.id));
+    const editIcon = document.createElement("i");
+    editIcon.className = "material-icons md-18"
+    editIcon.innerHTML = "edit"
 
-    // if (task.done) {
-    //   li.classList.add(doneCssClass);
-    // }
+    const deleteIcon = document.createElement("i");
+    deleteIcon.className = "material-icons md-18"
+    deleteIcon.innerHTML = "delete"
 
     span.textContent = contact.nome;
 
-    button.textContent = "x";
-    button.addEventListener("click", (event) => {
+    editButton.appendChild(editIcon);
+    editButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      // this.deleteContact(contact.id, li);
+    });
+
+    deleteButton.appendChild(deleteIcon);
+    deleteButton.addEventListener("click", (event) => {
       event.stopPropagation();
       this.deleteContact(contact.id, li);
     });
 
     li.appendChild(span);
-    li.appendChild(button);
+    li.appendChild(editButton);
+    li.appendChild(deleteButton);
     ul.appendChild(li);
   }
 }
