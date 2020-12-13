@@ -6,15 +6,25 @@ const assetsToCache = [
   'https://cdn.jsdelivr.net/npm/dexie@3.0.3/dist/dexie.mjs',
   'https://fonts.googleapis.com/css?family=Roboto:400,700',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
-  // './assets/images/pwa-logo.png',
-  // './assets/js/material.min.js',
-  // './assets/js/HtmlService.js',
-  // './assets/js/TodoService.js',
-  // './assets/css/style.css',
-  // './assets/js/app.js',
-  // './favicon.ico',
-  // './index.html',
-  // './'
+  './assets/css/style.css',
+  './assets/icons/icon-48x48.png',
+  './assets/icons/icon-144x144.png',
+  './assets/icons/icon-192x192.png',
+  './assets/icons/icon-310x310.png',
+  './assets/images/pwa-logo.png',
+  './assets/js/app.js',
+  './assets/js/ContactService.js',
+  './assets/js/edit.js',
+  './assets/js/EditService.js',
+  './assets/js/HtmlService.js',
+  './assets/js/material.min.js',
+  './assets/js/register.js',
+  './assets/js/RegisterService.js',
+  './edit.html',
+  './favicon.ico',
+  './index.html',
+  './register.html',
+  './'
 ];
 
 function removeOldCache(key) {
@@ -66,6 +76,5 @@ async function cacheFirst(request) {
 }
 
 self.addEventListener('fetch', event => {
-  // console.log('[Service Worker] Fetch event: ' + event.request.url);
   event.respondWith(networkFirst(event.request));
 });

@@ -11,7 +11,6 @@ export default class RegisterService {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       var inputs = form.elements;
-      console.log(inputs);
       this.addContact(inputs['nome'].value, inputs['telefone'].value, inputs['email'].value);
       window.location.href = "/";
     });
@@ -22,7 +21,6 @@ export default class RegisterService {
     const contact = { nome: nome, telefone: telefone, email: email};
     const contactId = await this.contactService.save(contact);
     contact.id = contactId;
-    console.log("addContact");
   }
 
   async listContacts() {

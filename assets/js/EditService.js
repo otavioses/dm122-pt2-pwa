@@ -12,10 +12,6 @@ export default class EditService {
   async fillFields(contactId) {
     console.log(contactId);
     const contact = await this.contactService.get(parseInt(contactId));
-    console.log(contact.nome);
-
-    // await this.contactService.save(contact);
-    // return;
 
     const form = document.querySelector("form");
     var inputs = form.elements;
@@ -25,7 +21,6 @@ export default class EditService {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       var inputs = form.elements;
-      console.log(inputs);
       const nome = inputs["nome"].value;
       const telefone = inputs["telefone"].value;
       const email = inputs["email"].value;
@@ -46,13 +41,10 @@ export default class EditService {
     const contact = { nome: nome, telefone: telefone, email: email };
     const contactId = await this.contactService.save(contact);
     contact.id = contactId;
-    console.log("addContact");
   }
 
   async listContacts() {
     const contact = await this.contactService.get(34);
-    console.log(contact.nome);
-    // contacts.forEach((contact) => console.log(contact.nome));
   }
 
   async loadContact(contactId) {
@@ -66,7 +58,6 @@ export default class EditService {
   }
 
   async saveContact(contact) {
-    console.log(contact);
     await this.contactService.save(contact);
   }
 

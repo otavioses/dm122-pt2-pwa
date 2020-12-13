@@ -5,7 +5,6 @@ class App {
   constructor() {
     this.registerServiceWorker();
     this.initialize();
-    console.log("App");
   }
 
   initialize() {
@@ -14,8 +13,8 @@ class App {
 
   registerServiceWorker() {
     if ("serviceWorker" in navigator) {
-      const onsuccess = () => console.log("[Service Worker] Registered......");
-      const onfailure = () => console.log("[Service Worker] Failed...;;...");
+      const onsuccess = () => console.log("[Service Worker] Registered...");
+      const onfailure = () => console.log("[Service Worker] Failed...");
 
       navigator.serviceWorker
         .register("sw.js")
