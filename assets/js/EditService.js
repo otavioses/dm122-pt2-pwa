@@ -28,7 +28,7 @@ export default class EditService {
       console.log(inputs);
       const nome = inputs["nome"].value;
       const telefone = inputs["telefone"].value;
-      const email = inputs["email"].email;
+      const email = inputs["email"].value;
       this.updateContact(contact.id, nome, telefone, email);
       window.location.href = "/";
     });
