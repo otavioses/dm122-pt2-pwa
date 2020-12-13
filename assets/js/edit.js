@@ -1,14 +1,14 @@
-import RegisterService from "./RegisterService.js";
+import EditService from "./EditService.js";
 import ContactService from "./ContactService.js";
 
-class Register {
+class Edit {
   constructor() {
     this.registerServiceWorker();
     this.initialize();
   }
 
   initialize() {
-    new RegisterService(new ContactService());
+    new EditService(new ContactService());
   }
 
   registerServiceWorker() {
@@ -24,4 +24,4 @@ class Register {
   }
 }
 
-new Register();
+new Edit();

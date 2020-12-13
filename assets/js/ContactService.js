@@ -18,22 +18,22 @@ export default class ContactService {
   }
 
   getAll() {
-    console.log("getAll");
     return db.contatos.toArray();
   }
 
   get(id) {
-    console.log("getAll id");
     return db.contatos.get(id);
   }
 
   save(contato) {
-    console.log("save");
     return db.contatos.put(contato);
   }
 
+  update(id, contato) {
+    return db.contatos.update(id, contato);
+  }
+
   delete(id) {
-    console.log("delete");
     return db.contatos.delete(id);
   }
 }

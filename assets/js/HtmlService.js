@@ -16,7 +16,7 @@ export default class HtmlService {
   }
 
   async editContact(contact) {
-    // document.location.href = '/register.html';
+    document.location.href = '/edit.html?contactId='+contact.id;
   }
 
   addToHtmlList(contact) {

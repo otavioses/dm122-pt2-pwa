@@ -35,17 +35,9 @@ export default class RegisterService {
     li.remove();
   }
 
-  // async saveTask(taskId, isDone) {
-  //   const task = await this.todoService.get(taskId);
-  //   task.done = isDone;
-  //   await this.todoService.save(task);
-  // }
-
-  // toggleTask(li, taskId) {
-  //   li.classList.toggle(doneCssClass);
-  //   const isDone = li.classList.contains(doneCssClass);
-  //   this.saveTask(taskId, isDone);
-  // }
+  async saveContact(contact) {
+    await this.todoService.save(contact);
+  }
 
   addToHtmlList(contact) {
     const ul = document.querySelector("ul");
