@@ -24,6 +24,11 @@ const assetsToCache = [
   './favicon.ico',
   './index.html',
   './register.html',
+  './manifest.json',
+  // 'edit.html',
+  // 'favicon.ico',
+  // 'index.html',
+  // 'register.html',
   './'
 ];
 
