@@ -1,11 +1,19 @@
+import {
+  set as setItem,
+  get as getItem,
+  keys as getKeys,
+} from "https://cdn.jsdelivr.net/npm/idb-keyval@3/dist/idb-keyval.mjs";
+
 const doneCssClass = "done";
 export default class EditService {
   constructor(contactService) {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const contactId = urlParams.get("contactId");
-
     this.contactService = contactService;
+    this.readValue();
+  }
+
+  async readValue() {
+    const keyInput = "keyId";
+    const contactId = await getItem(keyInput);
     this.fillFields(contactId);
   }
 

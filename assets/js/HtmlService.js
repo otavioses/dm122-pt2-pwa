@@ -1,4 +1,10 @@
-const doneCssClass = 'done';
+import {
+  set as setItem,
+  get as getItem,
+  keys as getKeys,
+} from "https://cdn.jsdelivr.net/npm/idb-keyval@3/dist/idb-keyval.mjs";
+
+const doneCssClass = "done";
 export default class HtmlService {
   constructor(contactService) {
     this.contactService = contactService;
@@ -16,7 +22,12 @@ export default class HtmlService {
   }
 
   async editContact(contact) {
-    document.location.href = '/edit.html?contactId='+contact.id;
+    const keyInput = "keyId";
+    const valueInput = contact.id;
+    setItem(keyInput, valueInput).then(() => {
+      console.log("id salvo");
+    });
+    document.location.href = "/edit.html";
   }
 
   addToHtmlList(contact) {
@@ -28,12 +39,12 @@ export default class HtmlService {
     const editButton = document.createElement("button");
 
     const editIcon = document.createElement("i");
-    editIcon.className = "material-icons md-18"
-    editIcon.innerHTML = "edit"
+    editIcon.className = "material-icons md-18";
+    editIcon.innerHTML = "edit";
 
     const deleteIcon = document.createElement("i");
-    deleteIcon.className = "material-icons md-18"
-    deleteIcon.innerHTML = "delete"
+    deleteIcon.className = "material-icons md-18";
+    deleteIcon.innerHTML = "delete";
 
     span.textContent = contact.nome;
 
