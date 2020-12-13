@@ -29,11 +29,11 @@
       </header>
 
       <main class="mdl-layout__content mat-typography" style="text-align: center">
-        <form >
-          <input type="text" name="nome" placeholder="Nome" autofocus="" required="">
-          <input type="text" name="telefone" placeholder="Telefone" inputmode="tel" required="">
-          <input type="text" name="email" placeholder="E-mail" inputmode="email" required="" >
-          <button class="submit_button" type="submit" onclick="this.form.submit()" >Salvar</button>
+        <form>
+          <input type="text" name="nome" id="nome" placeholder="Nome" autofocus="" required>
+          <input type="text" name="telefone" placeholder="Telefone" inputmode="tel" required>
+          <input type="text" name="email" placeholder="E-mail" inputmode="email" required>
+          <input class="submit_button" type="submit" value="Salvar" onClick="return document.getElementById('nome').value !=''"/>
         </form>
       </main>
     </div>
